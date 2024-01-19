@@ -14,41 +14,16 @@ async function startProgram() {
 */
 
 // Square w/ different colors for each line
-// Create a new Sphero BOLT object
-var bolt = new SpheroBOLT();
-
-// Set the heading to 0 degrees
-bolt.setHeading(0);
-
-// Start rolling
-bolt.roll(60, 1);
-
-// Wait for 1 second
-delay(1000);
-
-// Turn right 90 degrees
-bolt.turnRight(90);
-
-// Roll again
-bolt.roll(60, 1);
-
-// Wait for 1 second
-delay(1000);
-
-// Turn right 90 degrees again
-bolt.turnRight(90);
-
-// Roll again
-bolt.roll(60, 1);
-
-// Wait for 1 second
-delay(1000);
-
-// Turn right 90 degrees one last time
-bolt.turnRight(90);
-
-// Stop rolling
-bolt.stop();
+	async function startProgram() {
+	setMainLed({r:255,g:0,b:0})
+	await roll(90,25,2)
+	setMainLed({r:128,g:0,b:128})
+	await roll(180,25,2)
+	setMainLed({r:137,g:240,b:207})
+	await roll(270,25,2)
+	setMainLed({r:255,g:105,b:180})
+	await roll(360,25,2)
+	}
 
 
 
