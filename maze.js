@@ -25,3 +25,13 @@ await scrollMatrixText('RED LED', { r: 255, g: 0, b: 0 }, 75, true) ; await setF
 await setMainLed({ r: 255, g: 0, b: 0 })
 await stopRoll
 await roll(475,60,1)
+// Movemnt to 2nd Sound + 2nd Sound
+await stopRoll
+await roll (395,75,1)
+await stopRoll	
+await roll(490,75, 0.5)
+await stopRoll
+await Sound.EightBit.Lose.play()
+}
+
+
