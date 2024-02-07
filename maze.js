@@ -4,34 +4,36 @@
 // Program: Maze
 //Bolt ID: 33DF
 
+async function startProgram() {
+	await scrollMatrixText('Start!', {r:66, g:66, b:66}, 25, true)
+	await speak('Start!')
 
-async function startProgram(){
-await speak("Start!", true);	
-await scrollMatrixText('Start!', { r: 66, g: 66, b: 66 }, 75, true)    	
-// Blue LED + Movement
-await roll(360, 75, 2.035)
-await scrollMatrixText('BLUE LED', { r: 0, g: 0, b: 255 }, 75, true) ; await setFrontLed({ r: 0, g: 0, b: 255 }) ; await setBackLed({ r: 0, g: 0, b: 255 }) 
-await setMainLed({ r: 0, g: 0, b: 255 })
-// Move toward Noise and make Noise
-await roll(450,75, 1.605)
-await Sound.EightBit.LevelComplete.play()
-// Movement + RED LED
-await roll(540,75,1.065)
-await stopRoll
-await stopRoll
-await roll(560,35,1.5)
-await stopRoll
-await scrollMatrixText('RED LED', { r: 255, g: 0, b: 0 }, 75, true) ; await setFrontLed({ r: 255, g: 0, b: 0 }) ; await setBackLed({ r: 255, g: 0, b: 0 }) 
-await setMainLed({ r: 255, g: 0, b: 0 })
-await stopRoll
-await roll(475,60,1)
-// Movemnt to 2nd Sound + 2nd Sound
-await stopRoll
-await roll (395,75,1)
-await stopRoll	
-await roll(490,75, 0.5)
-await stopRoll
-await Sound.EightBit.Lose.play()
-}
-
-
+//Roll to Blue then Blue LED
+	await roll(0, 52.5, 3)
+	setMainLed({r:0, g:0, b:255})
+	await scrollMatrixText('BLUE LED', { r: 0, g: 0, b: 255 }, 75, true) ; await setFrontLed({ r: 0, g: 0, b: 255 }) ; await setBackLed({ r: 0, g: 0, b: 255 }) 
+	await setMainLed({ r: 0, g: 0, b: 255 })
+//Roll to sound then play sound
+	await roll(90, 52.5, 2)
+	await Sound.EightBit.Alert.play()
+	await roll(180, 68, 1)
+	await delay(1)
+	await roll(223, 66, 1)
+	await delay(1)
+	await scrollMatrixText('RED LED', { r: 255, g: 0, b: 0 }, 75, true) ; await setFrontLed({ r: 255, g: 0, b: 0 }) ; await setBackLed({ r: 255, g: 0, b: 0 }) 
+	await setMainLed({ r: 255, g: 0, b: 0 })	
+	//Sound 2
+	await roll(135, 45,1)
+	await delay(1)
+	await roll(45,68,1)
+	await delay(1)
+	await Sound.EightBit.Warning.play()
+	//Green Led
+	await roll(135,48,1)
+	await delay(1)
+	await roll(225,45,1)
+	await delay(1)
+	await roll(130,48,1)
+	await scrollMatrixText('GREEN LED', { r: 0, g: 255, b: 0 }, 75, true) ; await setFrontLed({ r: 0, g: 255, b: 0 }) ; await setBackLed({ r: 0, g: 255, b: 0 }) 
+	await setMainLed({ r: 0, g: 255, b: 0 })
+ss
