@@ -43,3 +43,4 @@ async function startProgram() {
 	await scrollMatrixText('PURPLE LED', { r: 128, g: 0, b: 128 }, 75, true) ; await setFrontLed({ r: 128, g: 0, b: 128 }) ; await setBackLed({ r: 128, g: 0, b: 128 }) 
 	await setMainLed({ r: 128, g: 0, b: 128 })	
 	await Sound.EightBit.LevelComplete.play()
+	s
