@@ -49,4 +49,4 @@ async function startProgram() {
 	await speak('FINISH!')
 	await stopRoll
 	
-}​
+}
