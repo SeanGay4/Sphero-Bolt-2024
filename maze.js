@@ -35,7 +35,7 @@ async function startProgram() {
 	await delay(1)
 	await roll(130,48,1)
 	await scrollMatrixText('GREEN LED', { r: 0, g: 255, b: 0 }, 75, true) ; await setFrontLed({ r: 0, g: 255, b: 0 }) ; await setBackLed({ r: 0, g: 255, b: 0 }) 
-	await setMainLed({ r: 0, g: 255, b: 0 })
+	await setMainLed({ r: 0, g: 255, b: 0 })	
 	//Sound 3 and Purple
 	await roll(42,62,1)
 	await delay(1)
@@ -43,4 +43,10 @@ async function startProgram() {
 	await scrollMatrixText('PURPLE LED', { r: 128, g: 0, b: 128 }, 75, true) ; await setFrontLed({ r: 128, g: 0, b: 128 }) ; await setBackLed({ r: 128, g: 0, b: 128 }) 
 	await setMainLed({ r: 128, g: 0, b: 128 })	
 	await Sound.EightBit.LevelComplete.play()
-	s
+	//finish
+	await roll(30, 30, 5)
+	await scrollMatrixText('FINISH', {r:66, g: 66, b:66}, 25, true)
+	await speak('FINISH!')
+	await stopRoll
+	
+}​
